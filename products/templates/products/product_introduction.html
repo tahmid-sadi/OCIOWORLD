@@ -2,4 +2,8 @@
 
 {% block content %}
 <h1>OCIO product page. Finally Working.</h1>
+{% for chair in chairs %}
+    <img src="{{ chair.model_image.url }}" width="300" height="300" class="img-fluid" alt="Responsive image">
+    {{ chair.model_number }}
+{% endfor %}
 {% endblock %}
