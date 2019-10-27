@@ -8,7 +8,10 @@ def products_index(request):
 
 
 def details(request):
-    return render(request, 'products/product_details.html')
+    features = Feature.objects.all()
+    return render(request, 'products/product_details.html', {'features': features})
+
+
 
 
 
