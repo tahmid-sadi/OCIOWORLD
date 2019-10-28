@@ -7,8 +7,8 @@ def products_index(request):
     return render(request, 'products/product_introduction.html', {'chairs': chairs})
 
 
-def details(request):
-    features = Feature.objects.all()
+def details(request, chair_id):
+    features = Feature.objects.filter(chair=chair_id)
     return render(request, 'products/product_details.html', {'features': features})
 
 
