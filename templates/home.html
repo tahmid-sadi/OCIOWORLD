@@ -1,20 +1,29 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div class="cover-container d-flex w-50 h-50 p-3 mx-auto flex-column">
-    <div class="text-center">
-        <main role="main" class="inner cover">
-            <h1 class="cover-heading">Welcome to OCIO - Bangladesh</h1>
-            <p class="lead">We at OCIO care about your well being. Our products promote healthy lifestyle. Over the
-                next
-                few moments you will embark on a journey that will captivate you. So why wait? Just indulge yourself
-                by
-                pressing the button below
-            </p>
-            <p class="lead">
-                <a href="{% url 'products_index' %}" class="btn btn-lg btn-secondary">Enter</a>
-            </p>
-        </main>
+<div class="container-fluid">
+    <div class="row vh-100 bg-dark">
+        <div class="col-3 bg-dark">
+        </div>
+        <div class="col-6 text-white align-self-center">
+            <div class="jumbotron jumbotron-fluid bg-dark">
+                <div class="container text-center">
+                    <h1 class="display-5">Welcome to OCIO - Bangladesh</h1>
+                    <p class="lead">We at OCIO care about your well being. Our products promote healthy
+                        lifestyle. Over the next few moments you will embark on a journey that will captivate you. So
+                        why wait? Just indulge yourself by pressing the button below
+                    </p>
+                    <a class="btn btn-info btn-lg" href="{% url 'products_index' %}" role="button">Enter</a>
+                </div>
+            </div>
+        </div>
+        <footer class="text-white fixed-bottom">
+            <div class="container text-center">
+                <p> © S M Tahmid Baquee {% now "Y" %}</p>
+            </div>
+        </footer>
+        <div class="col-3 bg-dark">
+        </div>
     </div>
 </div>
 {% endblock %}
