@@ -28,23 +28,35 @@
         </ul>
     </div>
 </nav>
-<div class="container-fluid">
-    <div class="row vh-100 bg-dark">
-        <div class="col-4 bg-dark align-self-center">
-            <div class="container text-white">
-                <p class="font-italic font-weight-bolder">OCIO - Bangladesh provides massage chairs of exquisite taste
-                    and style, unparalleled in the current market. Our chairs uses state of the art technology to soothe
-                    your body with several different massage methods. Depending on your requirement you can choose 3D+
-                    or 4D massage modes targeting your full or particular body parts. Be sure, your mind and body will
-                    be rejuvenated and relaxed after each massage session.
-                </p>
+<div class="container-fluid bg-dark">
+    <div class="row bg-dark">
+        <div class="col text-white align-self-center">
+            <div class="jumbotron jumbotron-fluid bg-dark">
+                <div class="container text-center">
+                    <p class="font-italic font-weight-bolder">OCIO - Bangladesh provides massage chairs of exquisite
+                        taste and style, unparalleled in the current market. Our chairs uses state of the art technology
+                        to provide your body with a soothing massage experience utilizing several different massage
+                        methods. Depending on your requirement you can choose 3D+ or 4D massage modes targeting your
+                        full or particular body parts. Be sure, your mind and body will be rejuvenated and relaxed after
+                        each massage session.
+                    </p>
+                </div>
             </div>
         </div>
+    </div>
+    <div class="container">
+        <div class="row bg-dark">
         {% for chair in chairs %}
-        <div class="col-4 bg-dark align-self-center text-center">
-            <img src="{{ chair.model_image.url }}" width="300" height="300" class="img-fluid rounded mx-auto"
-                 alt="Responsive image">
-            <a href="{% url 'details' chair.id %}"> {{ chair.model_number }}</a>
+        <div class="col-6 bg-dark align-self-center text-center text-white pb-5">
+            <div class="media ml-5">
+                <a href="{% url 'details' chair.id %}">
+                    <img src="{{ chair.model_image.url }}" class="img-thumbnail">
+                </a>
+                <div class="media-body mr-3">
+                    <h5 class="mt-0">{{ chair.model_number }}</h5>
+                    {{ chair.model_description }}
+                </div>
+            </div>
         </div>
         {% endfor %}
     </div>
